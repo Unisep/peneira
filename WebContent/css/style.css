@@ -1,0 +1,20 @@
+@font-face {
+	font-family: "JI Burrito";
+	src: url('../fonts/245269776-JI-Burrito.eot');
+	src: url('../fonts/245269776-JI-Burrito.eot?#iefix')
+		format('embedded-opentype'),
+		url('../fonts/245269776-JI-Burrito.svg#JI Burrito') format('svg'),
+		url('../fonts/245269776-JI-Burrito.woff') format('woff'),
+		url('../fonts/245269776-JI-Burrito.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	padding-top: 70px;
+}
+
+.brand-letters {
+	font-family: "JI Burrito";
+	font-size: 38px;
+}
