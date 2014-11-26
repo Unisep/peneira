@@ -31,3 +31,52 @@
 .nav-top {
 	margin-top: 6px;
 }
+
+/*--------------
+    Masthead
+---------------*/
+
+#home .masthead {
+  background-image: url('../images/wallpapers/4.jpg');
+  margin: 0em;
+  padding: 5rem 0rem;
+}
+
+#home .masthead .column {
+  position: relative;
+}
+
+#home .masthead .information {
+  margin: 10em 1em 1em 350px;
+}
+
+#home .masthead .information p {
+  max-width: 600px;
+}
+
+#home .masthead .image {
+  position: absolute;
+  left: 0%;
+  bottom: -110px;
+}
+
+.big-div{
+	height: 100%;
+	width: 100%;
+}
+
+*::-webkit-input-placeholder {
+    color: red;
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: red;
+}
+input::-moz-placeholder {
+    /* FF 19+ */
+    color: red;
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: red;
+}
