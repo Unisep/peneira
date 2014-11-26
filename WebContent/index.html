@@ -1,59 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Bem vindo!</title>
+<title>A Peneira!</title>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/style.css" />
+
+<!-- <link rel="stylesheet" type="text/css" -->
+  <!-- href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700" /> -->
+
+<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="css/semantic.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
 </head>
 <body>
 
-	<nav class="navbar navbar-default navbar-static-top" role="navigation">
-		<div class="container">
-			<div class="nav navbar-left">
-				<a class="navbar-brand" href="#">Brand</a>
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="nav navbar-right">
-				<form class="navbar-form" role="search">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-				</form>
-			</div>
-		</div>
-	</nav>
-	
-	<nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" 
-          	data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Brand</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input class="form-control" placeholder="Search" type="text">
+  <div class="ui fixed main menu">
+    <div class="container">
+      <div class="ui page grid bar">
+        <div class="ui right aligned grid">
+          <div class="center aligned three column row">
+            <div class="left floated left aligned two wide column">
+              <div class="active ui left side brand-letters">
+                Peneira
+              </div>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
+            <div class="nine wide column">
+              <div class="ui fluid icon input nav-top">
+                <input type="text" placeholder="Busque seus vídeos por aqui!">
+                <i class="search green icon"></i>
+              </div>
+            </div>
+            <div class="right floated three wide column">
+              <div class="row nav-top">
+                <div class="ui icon top left pointing dropdown">
+                  <img class="ui avatar image" src="images/steve.jpg">
+                  <i class="caret down icon"></i>
+                  <div class="menu">
+                    <div class="header">Display Density</div>
+                    <div class="item">Comfortable</div>
+                    <div class="item">Cozy</div>
+                    <div class="item">Compact</div>
+                    <div class="ui divider"></div>
+                    <div class="item">Settings</div>
+                    <div class="item">
+                      <i class="dropdown icon"></i>
+                      <span class="text">Upload Settings</span>
+                      <div class="menu">
+                        <div class="item">
+                          <i class="check icon"></i>
+                          Convert Uploaded Files to PDF
+                        </div>
+                        <div class="item">
+                          <i class="check icon"></i>
+                          Digitize Text from Uploaded Files
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">Manage Apps</div>
+                    <div class="item">Keyboard Shortcuts</div>
+                    <div class="item">Help</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script
-		src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    </div>
+  </div>
+  <div class="content">
+    
+  </div>
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/semantic.min.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
