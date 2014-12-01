@@ -14,35 +14,35 @@
 			<h3>New Scouts</h3>
 			<h:form>
 
-				<h:dataTable value="#{list.}" var="scouts" width="80%"
+				<h:dataTable value="#{list.scouts}" var="scout" width="80%"
 					border="1">
 
 					<h:column>
 						<f:facet name="header">Nome</f:facet>
-						<h:outputText value="#{athlete.name}" />
+						<h:outputText value="#{scout.name}" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Email</f:facet>
-						<h:outputText value="#{athlete.mail}" />
+						<h:outputText value="#{scout.mail}" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">State</f:facet>
-						<h:outputText value="#{athlete.state}" />
+						<h:outputText value="#{scout.state}" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Phone</f:facet>
-						<h:outputText value="#{athlete.phone}" />
+						<h:outputText value="#{scout.phone}" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">City</f:facet>
-						<h:outputText value="#{athlete.city}" />
+						<h:outputText value="#{scout.city}" />
 					</h:column>
 					<f:facet name="header">Bio</f:facet>
-					<h:outputText value="#{athlete.bio}" />
+					<h:outputText value="#{scout.bio}" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Club</f:facet>
-						<h:outputText value="#{athlete.position}" />
+						<h:outputText value="#{scout.club}" />
 					</h:column>
 					
 				</h:dataTable>
