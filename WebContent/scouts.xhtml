@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<body>
+
+	<ui:composition template="template.xhtml">
+
+		<ui:define name="conteudo">
+
+			<h3>New Scouts</h3>
+			<h:form>
+
+				<h:dataTable value="#{list.scouts}" var="scout" width="80%"
+					border="1">
+
+					<h:column>
+						<f:facet name="header">Nome</f:facet>
+						<h:outputText value="#{scout.name}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Email</f:facet>
+						<h:outputText value="#{scout.mail}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">State</f:facet>
+						<h:outputText value="#{scout.state}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Phone</f:facet>
+						<h:outputText value="#{scout.phone}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">City</f:facet>
+						<h:outputText value="#{scout.city}" />
+					</h:column>
+					<f:facet name="header">Bio</f:facet>
+					<h:outputText value="#{scout.bio}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Club</f:facet>
+						<h:outputText value="#{scout.club}" />
+					</h:column>
+					
+				</h:dataTable>
+
+
+			</h:form>
+		</ui:define>
+	</ui:composition>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<body>
+
+	<ui:composition template="template.xhtml">
+
+		<ui:define name="conteudo">
+
+			<h3>New Atlhete</h3>
+			<h:form>
+
+				<h:dataTable value="#{list.athletes}" var="athlete" width="80%"
+					border="1">
+
+					<h:column>
+						<f:facet name="header">Nome</f:facet>
+						<h:outputText value="#{athlete.name}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Email</f:facet>
+						<h:outputText value="#{athlete.mail}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Password</f:facet>
+						<h:outputText value="#{athlete.pass}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Image</f:facet>
+						<h:outputText value="#{athlete.image}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">State</f:facet>
+						<h:outputText value="#{athlete.state}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Phone</f:facet>
+						<h:outputText value="#{athlete.phone}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">City</f:facet>
+						<h:outputText value="#{athlete.city}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Born</f:facet>
+						<h:outputText value="#{athlete.born}" />
+					</h:column>
+					<f:facet name="header">Bio</f:facet>
+					<h:outputText value="#{athlete.bio}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Position</f:facet>
+						<h:outputText value="#{athlete.position}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Good Feet</f:facet>
+						<h:outputText value="#{athlete.good_feet}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Player</f:facet>
+						<h:outputText value="#{athlete.player}" />
+					</h:column>
+
+
+				</h:dataTable>
+
+
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+
+</html>
