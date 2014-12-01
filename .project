@@ -3,6 +3,7 @@
 	<name>Peneira</name>
 	<comment></comment>
 	<projects>
+		<project>hibernate_generico</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

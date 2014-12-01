@@ -1,4 +1,4 @@
-package br.com.peneira.VO;
+package br.com.peneira.vo;
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -8,12 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-
 @Entity
-@Table(name = "peneira")
-public class Athletes {
-	
+@Table(name = "athletes")
+public class AthleteVO {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_athlete")
@@ -24,34 +22,34 @@ public class Athletes {
 
 	@Column(name = "mail")
 	private String mail;
-	
+
 	@Column(name = "image")
 	private String image;
-	
+
 	@Column(name = "pass")
 	private String pass;
-	
+
 	@Column(name = "state")
 	private String state;
-	
+
 	@Column(name = "phone")
 	private Integer phone;
-	    
+
 	@Column(name = "city")
 	private String city;
-	
+
 	@Column(name = "born")
 	private Date born;
-	
+
 	@Column(name = "bio")
 	private Character bio;
-	
+
 	@Column(name = "position")
 	private String position;
-	
+
 	@Column(name = "good_feet")
-	private String good_feet;
-	
+	private String goodFeet;
+
 	@Column(name = "player")
 	private String player;
 
@@ -144,11 +142,11 @@ public class Athletes {
 	}
 
 	public String getGood_feet() {
-		return good_feet;
+		return goodFeet;
 	}
 
 	public void setGood_feet(String good_feet) {
-		this.good_feet = good_feet;
+		this.goodFeet = good_feet;
 	}
 
 	public String getPlayer() {
@@ -157,7 +155,6 @@ public class Athletes {
 
 	public void setPlayer(String player) {
 		this.player = player;
-	}	
+	}
 
-	
 }
