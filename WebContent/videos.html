@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Standard Meta -->
+  <!-- METAS -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <!-- / METAS -->
 
-  <!-- Site Properities -->
+  <!-- TITLE -->
   <title>A Peneira!</title>
+  <!-- / TITLE -->
 
-  <!-- <link rel="stylesheet" type="text/css" -->
-  <!-- href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700" /> -->
-
+  <!-- STYLES -->
   <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
   <link rel="stylesheet" type="text/css" href="css/semantic.min.css" />
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- / STYLES -->
 
 </head>
 <body id="home">
+  
+  <!-- NAV-BAR -->
   <div class="ui fixed main menu">
     <div class="container">
       <div class="ui page grid bar">
@@ -37,7 +40,7 @@
             <div class="right floated three wide column">
               <div class="row nav-top">
                 <div class="ui icon top left pointing dropdown">
-                  <img class="ui avatar image" src="images/steve.jpg">
+                  <img class="ui avatar image" src="images/avatar/small/steve.jpg">
                   <i class="caret down icon"></i>
                   <div class="menu">
                     <div class="item">
@@ -67,11 +70,56 @@
       </div>
     </div>
   </div>
+  <!-- / NAV-BAR -->
+  
+  <!-- CONTENT -->
   <div class="content masthead big-div">
-    
+    <div class="ui grid segment">
+      <div class="eleven wide column">
+        <div class="wide column">
+          <div class="ui video" data-source="youtube" data-id="i_mKY2CQ9Kk" data-image="images/soccer-3.jpg"></div>
+        </div>
+      </div>
+      <div class="five wide column">
+        <div class="ui green piled segment">
+          <div class="ui success center aligned message">
+            <i class="right floated close icon"></i>
+            <div class="header">
+              <p> Se gostou não deixe de avaliar! :D</p>
+            </div>
+          </div>
+          <h4 class="ui header">Awesome soccer playing with lights</h4>
+          <div class="ui info message">
+            <i class="info icon"></i>
+            You can include an arbitrary amount of metadata using your own class conventions, all child elements will automatically be spaced
+          </div>
+          <div class="ui card">
+            <div class="content">
+              <div class="header">Cute Dog</div>
+              <div class="meta">
+                <span class="right floated time">2 days ago</span>
+                <span class="category">Animals</span>
+              </div>
+              <div class="description">
+                Here's a description of a cute dog.
+              </div>
+            </div>
+            <div class="extra content">
+              <div class="right floated author">
+                <img class="ui avatar image" src="/images/avatar/small/matt.jpg"> Matt
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
   </div>
+  <!-- / CONTENT -->
+
+  <!-- SCRIPTS -->
   <script src="js/jquery-1.11.1.min.js"></script>
   <script src="js/semantic.min.js"></script>
   <script src="js/scripts.js"></script>
+  <!-- / SCRIPTS -->
+
 </body>
 </html>
