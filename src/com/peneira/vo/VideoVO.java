@@ -1,4 +1,4 @@
-package br.com.peneira.vo;
+package com.peneira.vo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

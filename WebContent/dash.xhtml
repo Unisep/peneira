@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+<body>
+  <ui:composition template="template.xhtml">
+    <ui:define name="conteudo">
+      <h1 style="color: white; font-size: 100px;">Teste da API</h1>
+      <h:form>
+        <h:commandButton id="dashee" action="#{logon.pullUserInfo}" value=""/>
+      </h:form>
+    </ui:define>
+  </ui:composition>
+</body>
+</html>

@@ -1,11 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
 <head>
+
  <style>
  
  ul{
@@ -43,5 +40,76 @@
 	
 	</ui:insert>
 
+=======
+  <!-- METAS -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <!-- / METAS -->
+  
+  <!-- TITLE -->
+  <title>a peneira.com!</title>
+  <!-- / TITLE -->
+  
+  <!-- STYLES -->
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="css/semantic.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- / STYLES -->
+  
+</head>
+<body id="home">
+  <ui:insert name="cabecalho">
+  
+    <!-- NAV-BAR -->
+    <div class="ui fixed main menu">
+      <div class="container">
+        <div class="ui page grid bar">
+          <div class="ui right aligned grid">
+            <div class="center aligned three column row">
+              <div class="left floated left aligned three wide column">
+                <div class="active ui left side brand-letters">peneira.com</div>
+              </div>
+              <div class="nine wide column">
+                <div class="ui fluid icon input nav-top">
+                  <input type="text" placeholder="Busque seus vídeos por aqui!"/><i class="search green icon"></i>
+                </div>
+              </div>
+              <div class="right floated three wide column">
+                <div class="ui nav-top">
+                  <a href="javascript:;" id="login-2"> <i class="big sign in icon" style="margin-top: 7px"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / NAV-BAR -->
+    
+  </ui:insert>
+  
+  <!-- CONTENT -->
+  <div class="content-body masthead big-div">
+    <ui:insert name="conteudo">
+    
+    </ui:insert>
+  </div>
+  <!-- / CONTENT -->
+  
+  
+  <!-- SCRIPTS -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/semantic.min.js"></script>
+  <script src="js/scripts.js"></script>
+  
+  <ui:insert name="scripts">
+    
+  </ui:insert>
+  <!-- / SCRIPTS -->
+  
+>>>>>>> e24bcaf5d6229686650db41f07e66cc4686902d1
 </body>
 </html>

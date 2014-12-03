@@ -63,23 +63,26 @@ a:hover{
     Masthead
 ---------------*/
 
-/*#home .masthead {
-  background-image: url('../images/wallpapers/4.jpg');
-  margin: 0em;
-  padding: 5rem 0rem;
-  z-index: -3;
-}
-*/
-
+/* target the maximum width of the device */
 .big-div{
 	height: 100%;
 	width: 100%;
+	
 	background-image: url('../images/wallpapers/1.jpg');
-	background-attachment: fixed;
+	background-attachment: fixed;		
 	background-repeat: no-repeat;
+	
 	margin: 0em;
 	padding: 5rem 0rem;
 	z-index: -3;
+}
+
+@media screen and (max-width: 1400px){
+	.big-div {
+		background-image: url('../images/wallpapers/4.jpg');
+		background-attachment: fixed;		
+		background-repeat: no-repeat;
+	}
 }
 
 /*----------------

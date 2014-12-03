@@ -1,4 +1,4 @@
-package br.com.peneira.vo;
+package com.peneira.vo;
 
 import java.util.Date;
 import javax.persistence.Column;

@@ -1,10 +1,11 @@
-package br.com.peneira.bean.message;
+package com.peneira.bean.message;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
-import br.com.peneira.vo.MessageVO;
+import com.peneira.vo.MessageVO;
+
 import br.edu.unisep.hibernate.GenericDAO;
 
 @ManagedBean(name="ListMessageBean")

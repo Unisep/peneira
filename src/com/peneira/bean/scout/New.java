@@ -1,9 +1,10 @@
-package br.com.peneira.bean.scout;
+package com.peneira.bean.scout;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
-import br.com.peneira.vo.ScoutVO;
+import com.peneira.vo.ScoutVO;
+
 import br.edu.unisep.hibernate.GenericDAO;
 
 @ManagedBean(name="NewScoutsBean")
