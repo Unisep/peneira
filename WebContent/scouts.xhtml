@@ -10,48 +10,39 @@
 	<ui:composition template="template.xhtml">
 
 		<ui:define name="conteudo">
+		<h:form>
 
-			<h3>New Scouts</h3>
-			<h:form>
+			<h3>New Scout</h3>
+			
+			Nome:
+	<h:inputText value="#{NewScoutsBean.scout.name}" size="70" />
+			<br />
+			Email:
+	<h:inputText value="#{NewScoutsBean.scout.mail}" size="50" />
+			<br />		
+			State:
+	<h:inputText value="#{NewScoutsBean.scout.state}" size="70" />
+			<br />
+			Phone:
+	<h:inputText value="#{NewScoutsBean.scout.phone}" size="50" />
+			<br />
+			City:
+	<h:inputText value="#{NewScoutsBean.scout.city}" size="50" />
+			<br />
+			Bio:
+	<h:inputText value="#{NewScoutsBean.scout.bio}" size="70" />
+			<br />
+			Club:
+	<h:inputText value="#{NewScoutsBean.scout.club}" size="50" />
+			<br />
 
-				<h:dataTable value="#{list.scouts}" var="scout" width="80%"
-					border="1">
-
-					<h:column>
-						<f:facet name="header">Nome</f:facet>
-						<h:outputText value="#{scout.name}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Email</f:facet>
-						<h:outputText value="#{scout.mail}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">State</f:facet>
-						<h:outputText value="#{scout.state}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Phone</f:facet>
-						<h:outputText value="#{scout.phone}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">City</f:facet>
-						<h:outputText value="#{scout.city}" />
-					</h:column>
-					<f:facet name="header">Bio</f:facet>
-					<h:outputText value="#{scout.bio}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Club</f:facet>
-						<h:outputText value="#{scout.club}" />
-					</h:column>
-					
-				</h:dataTable>
-
+			<h:commandButton value="Salvar" action="#{NewScoutsBean.save}" />
 
 			</h:form>
-		</ui:define>
-	</ui:composition>
 
+		</ui:define>
+
+	</ui:composition>
 </body>
 
 </html>
