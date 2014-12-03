@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+<body>
+  <ui:composition template="template.xhtml">
+    <ui:define name="conteudo">
+      <div class="ui grid">
+        <div class="center aligned column row">
+          <h1 class="home-title">
+            ESTÁ PRONTO PARA SER RECONHECIDO ?<br /> VENHA PARA SER O MELHOR!
+          </h1>
+          <div class="ui">
+          
+            <a href="javascript:;" class="ui large toggle button" id="login"
+              style="background-color: #2ECC40; color: white;"> CLIQUE AQUI! </a>
+            <div id="buttons">
+                <h:form>
+                  <h:commandLink id="facebook" action="#{logon.socialConnect}" >
+                    
+                    <h:graphicImage value="/images/facebook_icon.png" />
+                  </h:commandLink>
+               </h:form>
+              <div class="ui large twitter button">
+                <i class="twitter icon"></i> Twitter
+              </div>
+              <div class="ui large google plus button">
+                <i class="google plus icon"></i> Google +
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ui:define>
+  </ui:composition>
+</body>
+</html>

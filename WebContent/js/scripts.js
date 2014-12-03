@@ -21,8 +21,9 @@ $('.ui.rating')
     maxRating: 5
 });
 
-$('#login').on('click', function(){
-	$(this).toggle();
+$('#login, #login-2').on('click', function(){
+	$('#login, #login-2').toggle();
+	
 	$('#buttons').transition('fade in');
 });
 

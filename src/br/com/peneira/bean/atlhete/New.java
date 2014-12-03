@@ -3,7 +3,7 @@ package br.com.peneira.bean.atlhete;
 import javax.faces.bean.ManagedBean;
 
 import br.com.peneira.vo.AthleteVO;
-import br.edu.unisep.hibernate.DAOGenerico;
+import br.edu.unisep.hibernate.GenericDAO;
 
 @ManagedBean
 public class New {
@@ -12,11 +12,11 @@ public class New {
 
 	public String save() {
 
-		DAOGenerico<AthleteVO> dao = new DAOGenerico<AthleteVO>();
+		GenericDAO<AthleteVO> dao = new GenericDAO<AthleteVO>();
 		if (athlete.getId() != null && athlete.getId() != 0) {
-			dao.atualizar(athlete);
+			dao.update(athlete);
 		} else {
-			dao.salvar(athlete);
+			dao.save(athlete);
 		}
 		return "athlete";
 	}
