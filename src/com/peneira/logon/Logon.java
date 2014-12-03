@@ -1,11 +1,12 @@
-package br.com.peneira.bean.atlhete;
+package com.peneira.logon;
 
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Map;
 import java.util.Properties;
 
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
@@ -14,10 +15,12 @@ import org.brickred.socialauth.AuthProvider;
 import org.brickred.socialauth.Profile;
 import org.brickred.socialauth.SocialAuthConfig;
 import org.brickred.socialauth.SocialAuthManager;
+import org.brickred.socialauth.util.Constants;
 import org.brickred.socialauth.util.SocialAuthUtil;
 
 @SuppressWarnings("serial")
 @ManagedBean
+@SessionScoped
 public class Logon implements Serializable {
 
 	private SocialAuthManager manager;
@@ -26,39 +29,43 @@ public class Logon implements Serializable {
 	private Profile profile;
 
 	public Logon() {
-
 	}
 
 	public String socialConnect() {
 		try {
 			// Put your keys and secrets from the providers here
 			Properties props = System.getProperties();
-			props.put("graph.facebook.com.consumer_key", "873747422659195");
-			props.put("graph.facebook.com.consumer_secret", "27e73a8c1495ddeb25459434784bb515");
+			if (providerID.equals("twitter")) {
+				props.put("twitter.com.consumer_key", "0XD1VsKqVhj4xRYxUFI9Dgh6Y");
+				props.put("twitter.com.consumer_secret",
+				        "llK7FjZFq0tTXYGpqIumTcm6yXTFzivnRiyoccB85N7WYffyEc");
+				providerID = Constants.TWITTER;
+			} else {
+				props.put("googleapis.com.consumer_key",
+				        "58165383551-q4a07du824mkmj29s61c7p5on5f5i9fk.apps.googleusercontent.com");
+				props.put("googleapis.com.consumer_secret",
+				        "58165383551-q4a07du824mkmj29s61c7p5on5f5i9fk@developer.gserviceaccount.com");
+				providerID = Constants.GOOGLE_PLUS;
+			}
+			
 			// Define your custom permission if needed
-			props.put("graph.facebook.com.custom_permissions",
-			        "publish_stream,email,user_birthday,user_location,offline_access");
 			// Initiate required components
 			SocialAuthConfig config = SocialAuthConfig.getDefault();
-
 			config.load(props);
-
 			manager = new SocialAuthManager();
 			manager.setSocialAuthConfig(config);
-			// 'successURL' is the page you'll be redirected to on successful
-			// login
-			ExternalContext externalContext = FacesContext.getCurrentInstance()
-			        .getExternalContext();
-			String successURL = externalContext.getRequestContextPath()
-			        + "socialLoginSuccess.xhtml";
-			String authenticationURL = manager.getAuthenticationUrl("facebook", successURL);
+
+			// 'successURL' is the page you'll be redirected to on successful login
+			ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+			String successURL = "http://localhost:8080/Peneira/dash.jsf";
+			String authenticationURL = manager.getAuthenticationUrl(providerID, successURL);
 			FacesContext.getCurrentInstance().getExternalContext().redirect(authenticationURL);
 
+			return null;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return "error";
 		}
-		return "/index";
 	}
 
 	public void pullUserInfo() {
@@ -68,6 +75,9 @@ public class Logon implements Serializable {
 			        .getExternalContext();
 			HttpServletRequest request = (HttpServletRequest) externalContext.getRequest();
 			Map<String, String> map = SocialAuthUtil.getRequestParametersMap(request);
+			System.out.println("\n\n80 - MAP ---------- \n\n");
+			System.out.println(map);
+			
 			if (this.manager != null) {
 				AuthProvider provider = manager.connect(map);
 				this.profile = provider.getUserProfile();
@@ -76,10 +86,12 @@ public class Logon implements Serializable {
 				System.out.println("User's Social profile: " + profile);
 				// Redirect the user back to where they have been before logging
 				// in
+
 				FacesContext.getCurrentInstance().getExternalContext().redirect(originalURL);
-			} else
+			} else {
 				FacesContext.getCurrentInstance().getExternalContext()
-				        .redirect(externalContext.getRequestContextPath() + "home.xhtml");
+				        .redirect(externalContext.getRequestContextPath() + "index.jsf");
+			}
 		} catch (Exception ex) {
 			System.out.println("UserSession - Exception: " + ex.toString());
 		}
@@ -96,7 +108,8 @@ public class Logon implements Serializable {
 			this.invalidateSession(request);
 			// Redirect to home page
 			FacesContext.getCurrentInstance().getExternalContext()
-			        .redirect(externalContext.getRequestContextPath() + "home.xhtml");
+			        .redirect(externalContext.getRequestContextPath() + "home.jsf");
+
 		} catch (IOException ex) {
 			System.out.println("UserSessionBean - IOException: " + ex.toString());
 		}

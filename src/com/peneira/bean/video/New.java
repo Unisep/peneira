@@ -1,9 +1,10 @@
-package br.com.peneira.bean.video;
+package com.peneira.bean.video;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
-import br.com.peneira.vo.VideoVO;
+import com.peneira.vo.VideoVO;
+
 import br.edu.unisep.hibernate.GenericDAO;
 
 @ManagedBean(name="NewVideoBean")

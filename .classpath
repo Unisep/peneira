@@ -6,36 +6,16 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.0">
-		<attributes>
-			<attribute name="owner.project.facets" value="jst.web"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/HIBERNATE "/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSF"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSTL"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/POSTGRESQL"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-<<<<<<< HEAD
-	<classpathentry kind="lib" path="/home/bruno/.m2/repository/com/sun/faces/jsf-api/2.0.0-b13/jsf-api-2.0.0-b13.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="com.sun.faces"/>
-			<attribute name="maven.artifactId" value="jsf-api"/>
-			<attribute name="maven.version" value="2.0.0-b13"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
-=======
->>>>>>> 4caa7ae26a3b5197dc01c98aa9fcaebf8aefe374
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
