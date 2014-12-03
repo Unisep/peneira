@@ -2,11 +2,13 @@ package br.com.peneira.bean.message;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import br.com.peneira.vo.MessageVO;
-import br.edu.unisep.hibernate.DAOGenerico;
+import br.edu.unisep.hibernate.GenericDAO;
 
-@ManagedBean
+@ManagedBean(name="ListMessageBean")
+@ViewScoped
 public class List {
 
 	// Todo o código relacionado a listagem de mensagens.
@@ -14,8 +16,8 @@ public class List {
 	
 	@PostConstruct
 	public void list() {
-		DAOGenerico<MessageVO> dao = new DAOGenerico<MessageVO>();
-		messages = dao.listar(MessageVO.class);
+		GenericDAO<MessageVO> dao = new GenericDAO<MessageVO>();
+		messages = dao.list(MessageVO.class);
 	}
 	
 	public java.util.List<MessageVO> getMessages() {

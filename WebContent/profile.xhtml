@@ -10,67 +10,51 @@
 	<ui:composition template="template.xhtml">
 
 		<ui:define name="conteudo">
+		
+		<h:form>
 
 			<h3>New Atlhete</h3>
-			<h:form>
+			
+			Nome:
+	<h:inputText value="#{NewAthletesBean.athlete.name}" size="70" />
+			<br />
+			Email:
+	<h:inputText value="#{NewAthletesBean.athlete.mail}" size="50" />
+			<br />
+			Image:
+	<h:inputText value="#{NewAthletesBean.athlete.image}" size="70" />
+			<br />
+			Pass:
+	<h:inputText value="#{NewAthletesBean.athlete.pass}" size="50" />
+			<br />
+			State:
+	<h:inputText value="#{NewAthletesBean.athlete.state}" size="70" />
+			<br />
+			Phone:
+	<h:inputText value="#{NewAthletesBean.athlete.phone}" size="50" />
+			<br />
+			City:
+	<h:inputText value="#{NewAthletesBean.athlete.city}" size="50" />
+			<br />
+			Bio:
+	<h:inputText value="#{NewAthletesBean.athlete.bio}" size="70" />
+			<br />
+			Position:
+	<h:inputText value="#{NewAthletesBean.athlete.position}" size="50" />
+			<br />
+			Good Feet:
+	<h:inputText value="#{NewAthletesBean.athlete.good_feet}" size="70" />
+			<br />
+			Player:
+	<h:inputText value="#{NewAthletesBean.athlete.player}" size="50" />
+			<br />
 
-				<h:dataTable value="#{list.athletes}" var="athlete" width="80%"
-					border="1">
-
-					<h:column>
-						<f:facet name="header">Nome</f:facet>
-						<h:outputText value="#{athlete.name}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Email</f:facet>
-						<h:outputText value="#{athlete.mail}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Password</f:facet>
-						<h:outputText value="#{athlete.pass}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Image</f:facet>
-						<h:outputText value="#{athlete.image}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">State</f:facet>
-						<h:outputText value="#{athlete.state}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Phone</f:facet>
-						<h:outputText value="#{athlete.phone}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">City</f:facet>
-						<h:outputText value="#{athlete.city}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Born</f:facet>
-						<h:outputText value="#{athlete.born}" />
-					</h:column>
-					<f:facet name="header">Bio</f:facet>
-					<h:outputText value="#{athlete.bio}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Position</f:facet>
-						<h:outputText value="#{athlete.position}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Good Feet</f:facet>
-						<h:outputText value="#{athlete.good_feet}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Player</f:facet>
-						<h:outputText value="#{athlete.player}" />
-					</h:column>
-
-
-				</h:dataTable>
-
+			<h:commandButton value="Salvar" action="#{NewAthletesBean.save}" />
 
 			</h:form>
+
 		</ui:define>
+
 	</ui:composition>
 </body>
 
