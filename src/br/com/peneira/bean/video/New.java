@@ -1,22 +1,24 @@
 package br.com.peneira.bean.video;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import br.com.peneira.vo.VideoVO;
-import br.edu.unisep.hibernate.DAOGenerico;
+import br.edu.unisep.hibernate.GenericDAO;
 
-@ManagedBean
+@ManagedBean(name="NewVideoBean")
+@ViewScoped
 public class New {
 
 	private VideoVO video = new VideoVO();
 
 	public String save() {
 
-		DAOGenerico<VideoVO> dao = new DAOGenerico<VideoVO>();
+		GenericDAO<VideoVO> dao = new GenericDAO<VideoVO>();
 		if (video.getId() != null && video.getId() != 0) {
-			dao.atualizar(video);
+			dao.update(video);
 		} else {
-			dao.salvar(video);
+			dao.save(video);
 		}
 		return "video";
 	}

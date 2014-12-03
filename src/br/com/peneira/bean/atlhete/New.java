@@ -1,11 +1,13 @@
 package br.com.peneira.bean.atlhete;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import br.com.peneira.vo.AthleteVO;
 import br.edu.unisep.hibernate.GenericDAO;
 
-@ManagedBean
+@ManagedBean(name="NewAthletesBean")
+@ViewScoped
 public class New {
 
 	private AthleteVO athlete = new AthleteVO();

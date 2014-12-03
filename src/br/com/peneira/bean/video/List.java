@@ -1,20 +1,26 @@
 package br.com.peneira.bean.video;
 
 import javax.annotation.PostConstruct;
+
+
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import br.com.peneira.vo.VideoVO;
-import br.edu.unisep.hibernate.DAOGenerico;
+import br.edu.unisep.hibernate.GenericDAO;
 
-@ManagedBean
+//@ManagedBean(name="br.com.peneira.bean.message.List")
+
+@ManagedBean(name="ListVideoBean")
+@ViewScoped
 public class List {
 
 	private java.util.List<VideoVO> videos;
 
 	@PostConstruct
 	public void list() {
-		DAOGenerico<VideoVO> dao = new DAOGenerico<VideoVO>();
-		videos = dao.listar(VideoVO.class);
+		GenericDAO<VideoVO> dao = new GenericDAO<VideoVO>();
+		videos = dao.list(VideoVO.class);
 	}
 
 	public java.util.List<VideoVO> getVideos() {

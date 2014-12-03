@@ -2,11 +2,13 @@ package br.com.peneira.bean.atlhete;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import br.com.peneira.vo.AthleteVO;
 import br.edu.unisep.hibernate.GenericDAO;
 
-@ManagedBean
+@ManagedBean(name="ListAthletesBean")
+@ViewScoped
 public class List {
 
 	private java.util.List<AthleteVO> athletes;

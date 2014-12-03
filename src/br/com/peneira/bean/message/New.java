@@ -1,11 +1,13 @@
 package br.com.peneira.bean.message;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import br.com.peneira.vo.MessageVO;
-import br.edu.unisep.hibernate.DAOGenerico;
+import br.edu.unisep.hibernate.GenericDAO;
 
-@ManagedBean
+@ManagedBean(name="NewMessageBean")
+@ViewScoped
 public class New {
 
 	private MessageVO message = new MessageVO();
@@ -15,11 +17,11 @@ public class New {
 
 	public String save() {
 
-		DAOGenerico<MessageVO> dao = new DAOGenerico<MessageVO>();
+		GenericDAO<MessageVO> dao = new GenericDAO<MessageVO>();
 		if (message.getId() != null && message.getId() != 0) {
-			dao.atualizar(message);
+			dao.update(message);
 		} else {
-			dao.salvar(message);
+			dao.save(message);
 		}
 		return "message";
 	}
