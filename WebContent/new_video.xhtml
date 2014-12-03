@@ -10,23 +10,11 @@
 
 		<ui:define name="conteudo">
 
-			<h:form id="formfileupload" method="post"
-				enctype="multipart/form-data" styleClass="form-horizontal"
-				style="margin:11px 11px 11px 0;">
-				<h:graphicImage id="imgLogo" value="#{noticiaBean.urlImageLogo}"
-					style="height: 95px;width: 95px; background-color: #F3F3F3;"
-					class="img-thumbnail" />
-				<div id="upload-file-container">
-					<h:inputFile id="image" p:accept="image/*"
-						value="#{noticiaBean.image}" name="photo"
-						validator="#{noticiaBean.validarImagem}">
-						<f:ajax listener="#{noticiaBean.upload()}"
-							render="@form msg_fileUpload" />
-					</h:inputFile>
-					<h:message id="msg_fileUpload" for="image"
-						errorClass="form-control-error-message" />
-				</div>
-			</h:form>
+		 <h:form enctype="multipart/form-data">
+                <p:fileUpload value="#{fileUploadManagedBean.file}"  mode="simple"></p:fileUpload>
+                <p:separator/>
+                <h:commandButton value="Dummy Action" action="#{fileUploadManagedBean.dummyAction}"></h:commandButton>
+        </h:form>
 
 		</ui:define>
 	</ui:composition>
