@@ -9,12 +9,13 @@
 	<ui:composition template="template.xhtml">
 
 		<ui:define name="conteudo">
-
-		 <h:form enctype="multipart/form-data">
-                <p:fileUpload value="#{fileUploadManagedBean.file}"  mode="simple"></p:fileUpload>
-                <p:separator/>
-                <h:commandButton value="Dummy Action" action="#{fileUploadManagedBean.dummyAction}"></h:commandButton>
-        </h:form>
+			<h:form enctype="multipart/form-data">
+			<<iframe width="420" height="315" src="http://www.youtube.com/embed/bScOj4e0bOQ"></iframe><br />
+		
+			
+			<h:commandButton value="Upload"  action="#{NewUploadBean.save}"/>
+			</h:form>
+			
 
 		</ui:define>
 	</ui:composition>
