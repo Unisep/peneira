@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<body>
+
+	<ui:composition template="template.xhtml">
+
+		<!-- Define o conteúdo que irá substituir uma região do template utilizado
+		     Deve ser utilizada sempre em conjunto com a tag <ui:composition> -->
+		<ui:define name="conteudo">
+
+			<h3>List Scouts</h3>
+			<h:form>
+				<h:dataTable value="#{ListScoutsBean.scouts}" var="scouts"
+					width="80%" border="1">
+
+					<h:column>
+						<f:facet name="header">Name</f:facet>
+						<h:outputText value="#{scouts.name}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">City</f:facet>
+						<h:outputText value="#{scouts.city}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Phone</f:facet>
+						<h:outputText value="#{scouts.phone}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Mail</f:facet>
+						<h:outputText value="#{scouts.mail}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Club</f:facet>
+						<h:outputText value="#{scouts.club}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Bio</f:facet>
+						<h:outputText value="#{scouts.bio}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Status</f:facet>
+						<h:outputText value="#{scouts.state}" />
+					</h:column>
+				</h:dataTable>
+				<h:commandButton value="New Scouts" action="scouts"></h:commandButton>
+			</h:form>
+
+		</ui:define>
+
+	</ui:composition>
+
+</body>
+</html>

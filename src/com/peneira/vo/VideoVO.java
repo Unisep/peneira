@@ -20,6 +20,9 @@ public class VideoVO {
 	@ManyToMany
 	@JoinColumn(name = "id_athlete")
 	private Integer id_athlete;
+	
+	@Column(name = "url")
+	private String url;
 
 	@Column(name = "description")
 	private String description;
@@ -32,6 +35,14 @@ public class VideoVO {
 
 	public Integer getId() {
 		return id;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public void setId(Integer id) {

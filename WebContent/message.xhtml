@@ -12,12 +12,15 @@
 		<ui:define name="conteudo">
 
 			<h3>New Message</h3>
+			<h:form>
 
 			<ul>
 				<ui:repeat value="#{NewMessageBean.message}" var="messages">
 					<li><h:link value="#{messages.id}" outcome="book">
+					<h:inputTextarea  placeholder="Remember, be nice!" cols="30" rows="8">Mensagems<br /></h:inputTextarea>
 							<f:param name="id" value="#{messages.id_athlete}" />
 							<f:param name="id" value="#{messages.id_scout}" />
+							<h:commandButton value="Salvar" action="#{NewMessageBean.save}" />
 						</h:link></li>
 				</ui:repeat>
 			</ul>
