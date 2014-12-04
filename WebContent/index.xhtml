@@ -14,8 +14,8 @@
               style="background-color: #2ECC40; color: white;"> CLIQUE AQUI! </a>
             <div id="buttons">
               <h:form>
-                <div class="ui large twitter button">
-                  <h:commandLink id="twitter" action="#{logon.socialConnect}" style="color: white;">
+                <div class="ui disabled large twitter button">
+                  <h:commandLink id="twitter" action="#{logon.socialConnect}">
                     <f:setPropertyActionListener target="#{logon.providerID}" value="twitter" />
                     <i class="twitter icon"></i> Twitter
                   </h:commandLink>

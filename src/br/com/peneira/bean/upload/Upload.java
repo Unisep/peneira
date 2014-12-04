@@ -14,6 +14,7 @@ import javax.servlet.http.Part;
 import org.apache.commons.codec.binary.Base64OutputStream;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 
+<<<<<<< HEAD
 import br.edu.unisep.hibernate.GenericDAO;
 
 import com.peneira.vo.VideoVO;
@@ -81,4 +82,29 @@ public class Upload {
 		this.image = image;
 	}
 
+=======
+@ManagedBean(name = "NewUploadBean")
+@ViewScoped
+public class Upload {
+//	private VideoVO video = new VideoVO();
+//
+//	public String save() {
+//
+//		GenericDAO<VideoVO> dao = new GenericDAO<VideoVO>();
+//		if (video.getId() != null && video.getId() != 0) {
+//			dao.update(video);
+//		} else {
+//			dao.save(video);
+//		}
+//		return "new_video";
+//	}
+//
+//	public VideoVO getVideos() {
+//		return video;
+//	}
+//
+//	public void setVideos(VideoVO video) {
+//		this.video = video;
+//	}
+>>>>>>> 7a4bae7eadb89a4c44981cecbffc71104bbda363
 }
