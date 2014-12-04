@@ -3,16 +3,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core">
 <body>
 
 	<ui:composition template="template.xhtml">
 
 		<ui:define name="conteudo">
-			<h:form enctype="multipart/form-data">			
-			<<iframe width="420" height="315" src="https://www.youtube.com/watch?v=pw2ZSiEpyog"></iframe><br />			
-			<h:commandButton value="Upload"  action="#{NewUploadBean.save}"/>
-			</h:form>	
+
+			<h:form id="formfileupload" method="post"
+				enctype="multipart/form-data" styleClass="form-horizontal"
+				style="margin:11px 11px 11px 0;">
+				<h:graphicImage id="video" value="#{NewUploadBean.videos.url}"
+					style="height: 420px;width: 315px; background-color: #F3F3F3;"
+					class="img-thumbnail" />
+				<div id="upload-file-container">
+					<h:inputFile id="image" p:accept="image/*"
+						value="#{NewUploadBean.videos.url}" name="Video">
+						<f:ajax listener="#{NewUploadBean.save()}"
+							render="@form msg_fileUpload" />
+					</h:inputFile>
+					<h:message id="msg_fileUpload" for="image"
+						errorClass="form-control-error-message" />
+				</div>
+				<h:commandButton value="Upload" action="#{NewUploadBean.save}" />
+			</h:form>
 
 		</ui:define>
 	</ui:composition>

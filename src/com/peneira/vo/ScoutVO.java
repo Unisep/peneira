@@ -29,13 +29,13 @@ public class ScoutVO {
 	private Integer phone;
 
 	@Column(name = "city")
-	private Integer city;
+	private String city;
 
 	@Column(name = "bio")
-	private Integer bio;
+	private String bio;
 
 	@Column(name = "club")
-	private Integer club;
+	private String club;
 
 	public Integer getId() {
 		return id;
@@ -77,28 +77,30 @@ public class ScoutVO {
 		this.phone = phone;
 	}
 
-	public Integer getCity() {
+	public String getCity() {
 		return city;
 	}
 
-	public void setCity(Integer city) {
+	public void setCity(String city) {
 		this.city = city;
 	}
 
-	public Integer getBio() {
+	public String getBio() {
 		return bio;
 	}
 
-	public void setBio(Integer bio) {
+	public void setBio(String bio) {
 		this.bio = bio;
 	}
 
-	public Integer getClub() {
+	public String getClub() {
 		return club;
 	}
 
-	public void setClub(Integer club) {
+	public void setClub(String club) {
 		this.club = club;
 	}
+
+	
 
 }

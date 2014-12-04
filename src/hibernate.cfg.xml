@@ -20,12 +20,12 @@
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">true</property>
 
-		<!-- Classes Mapeadas -->
+		<!-- Classes Mapeadas 
 		<mapping class="br.com.peneira.bean.vo.AtlheteVO" />
 		<mapping class="br.com.peneira.bean.vo.MessageVO" />
 		<mapping class="br.com.peneira.bean.vo.ScoutVO" />
 		<mapping class="br.com.peneira.bean.vo.VideoVO" />
-		
+		-->
 	</session-factory>
 
 </hibernate-configuration>

@@ -1,0 +1,66 @@
+<!DOCTYPE  html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<body>
+
+	<ui:composition template="template.xhtml">
+
+		<!-- Define o conteúdo que irá substituir uma região do template utilizado
+		     Deve ser utilizada sempre em conjunto com a tag <ui:composition> -->
+		<ui:define name="conteudo">
+
+			<h3>List Atlhetes</h3>
+			<h:form>
+				<h:dataTable value="#{ListAthletesBean.athletes}" var="atlhetes"
+					width="80%" border="1">
+
+					<h:column>
+						<f:facet name="header">Name</f:facet>
+						<h:outputText value="#{atlhetes.name}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">City</f:facet>
+						<h:outputText value="#{atlhetes.city}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Phone</f:facet>
+						<h:outputText value="#{atlhetes.phone}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Mail</f:facet>
+						<h:outputText value="#{atlhetes.mail}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Born</f:facet>
+						<h:outputText value="#{atlhetes.born}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Bio</f:facet>
+						<h:outputText value="#{atlhetes.bio}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Position</f:facet>
+						<h:outputText value="#{atlhetes.position}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Good Feet</f:facet>
+						<h:outputText value="#{atlhetes.good_feet}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Player</f:facet>
+						<h:outputText value="#{atlhetes.player}" />
+					</h:column>
+					
+				</h:dataTable>
+				<h:commandButton value="New Atlhete" action="profile"></h:commandButton>
+			</h:form>
+
+		</ui:define>
+
+	</ui:composition>
+
+</body>
+</html>
