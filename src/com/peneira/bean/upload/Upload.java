@@ -1,59 +1,51 @@
 package com.peneira.bean.upload;
 
+import java.io.File;
+import java.io.FileOutputStream;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletResponse;
 
-@ManagedBean(name="u")
+import org.apache.commons.fileupload.FileUpload;
+
+import com.peneira.vo.AthleteVO;
+
+@ManagedBean
 @ViewScoped
 public class Upload {
+	public void fileUploadAction(FileUploadEvent event) {
+		try {
+			ExternalContext externalContext = FacesContext.getCurrentInstance()
+					.getExternalContext();
+			HttpServletResponse response = (HttpServletResponse) externalContext
+					.getResponse();
 
-//	public void upload() throws IOException {
-//		byte[] bytes;
-//		try {
-//			File file = new File(image.getSubmittedFileName());
-//			String result = "";
-//			String ext = getExtencaoImg(image.getSubmittedFileName());
-//			try (InputStream input = image.getInputStream()) {
-//
-//				final BufferedImage bufferedImage = ImageIO.read(input);
-//
-//				ByteArrayOutputStream byteArrayOS = new ByteArrayOutputStream();
-//				OutputStream outputStream64 = new Base64OutputStream(
-//						byteArrayOS);
-//				ImageIO.write(bufferedImage, ext, outputStream64);
-//
-//				result = "data:image/" + ext + ";base64, "
-//						+ byteArrayOS.toString("UTF-8");
-//				setUrlImageLogo(result);
-//			}
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
+			FacesContext aFacesContext = FacesContext.getCurrentInstance();
+			ServletContext context = (ServletContext) aFacesContext
+					.getExternalContext().getContext();
 
-//	public String getExtencaoImg(String nomeImg) {
-//		String ext[] = nomeImg.split("\\.");
-//		int i = ext.length;
-//		if (i > 1) {
-//			return ext[i - 1];
-//		}
-//		return null;
-//	}
-//
-//	public void validarImagem(FacesContext facesContext, UIComponent component,
-//			Object value) throws MessagingException {
-//
-//		Part file = (Part) value;
-//		if (("image/jpg".equals(file.getContentType()))
-//				|| ("image/png".equals(file.getContentType()))
-//				|| ("image/jpeg".equals(file.getContentType()))) {
-//			return;
-//		} else {
-//			final FacesMessage message = new FacesMessage(
-//					FacesMessage.SEVERITY_ERROR, "Formato indisponivel",
-//					"Imagem indisponivel");
-//			throw new ValidatorException(message);
-//		}
-//	}
+			String realPath = context.getRealPath("/");
+
+			// Aqui cria o diretorio caso não exista
+			File file = new File(realPath + "/video/");
+			file.mkdirs();
+
+			byte[] arquivo = event.getFile().getContents();
+			String caminho = realPath + "/video/"
+					+ event.getFile().getFileName();
+
+			// esse trecho grava o arquivo no diretório
+			FileOutputStream fos = new FileOutputStream(caminho);
+			fos.write(arquivo);
+			fos.close();
+
+		} catch (Exception ex) {
+			System.out.println("Erro no upload de imagem" + ex);
+		}
+	}
+
 }
