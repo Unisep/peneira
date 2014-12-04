@@ -20,7 +20,7 @@ import org.brickred.socialauth.util.Constants;
 import org.brickred.socialauth.util.SocialAuthUtil;
 
 @SessionScoped
-@ManagedBean(name="logon")
+@ManagedBean
 public class Logon implements Serializable {
 
 	private SocialAuthManager manager;
