@@ -1,35 +1,47 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
   xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
 <body>
   <ui:composition template="template.xhtml">
     <ui:define name="conteudo">
       <h:form>
-        <h3>New Scout</h3>
-			
-			Nome:
-	<h:inputText value="#{NewScoutsBean.scout.name}" size="70" />
-        <br />
-			Email:
-	<h:inputText value="#{NewScoutsBean.scout.mail}" size="50" />
-        <br />		
-			State:
-	<h:inputText value="#{NewScoutsBean.scout.state}" size="70" />
-        <br />
-			Phone:
-	<h:inputText value="#{NewScoutsBean.scout.phone}" size="50" />
-        <br />
-			City:
-	<h:inputText value="#{NewScoutsBean.scout.city}" size="50" />
-        <br />
-			Bio:
-	<h:inputText value="#{NewScoutsBean.scout.bio}" size="70" />
-        <br />
-			Club:
-	<h:inputText value="#{NewScoutsBean.scout.club}" size="50" />
-        <br />
-        <h:commandButton value="Salvar" action="#{NewScoutsBean.save}" />
+        <div class="ui grid">
+          <div class="four wide column"></div>
+          <div class="eight wide column">
+            <div class="ui form segment">
+              <h1 class="ui dividing header">Novo Olheiro</h1>
+              <div class="two fields">
+                <div class="field">
+                  <label>Nome</label>
+                  <h:inputText value="#{NewScoutsBean.scout.name}" placeholder="Ronaldo Nazário" />
+                </div>
+                <div class="field">
+                  <label>Email</label>
+                  <h:inputText value="#{NewScoutsBean.scout.mail}" placeholder="ronaldo@9nine.com" />
+                </div>
+              </div>
+              <div class="two fields">
+                <div class="field">
+                  <label>Telefone</label>
+                  <h:inputText value="#{NewScoutsBean.scout.phone}" placeholder="(046) 9917-8823" />
+                </div>
+                <div class="field">
+                  <label>Cidade:</label>
+                  <h:inputText value="#{NewScoutsBean.scout.city}" placeholder="Francisco Beltrão" />
+                </div>
+              </div>
+              <div class="field">
+                <label>Clube:</label>
+                <h:inputText value="#{NewScoutsBean.scout.club}" placeholder="SCCP" />
+              </div>
+              <div class="field">
+                <label>Bio</label>
+                <h:inputTextarea value="#{NewScoutsBean.scout.bio}" />
+              </div>
+              <h:commandButton value="Salvar" action="#{NewScoutsBean.save}" class="ui submit button" />
+            </div>
+          </div>
+        </div>
       </h:form>
     </ui:define>
   </ui:composition>
